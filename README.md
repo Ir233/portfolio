@@ -1,6 +1,6 @@
 # 罗能 · 视频与概念作品集
 
-静态作品网站，入口为 `index.html`，支持 GitHub Pages、Cloudflare Pages 和 Cloudflare Workers Static Assets。
+静态作品网站，入口为 `docs/index.html`，支持 GitHub Pages、Cloudflare Pages 和 Cloudflare Workers Static Assets。
 
 ## 内容
 
@@ -12,6 +12,8 @@
 
 ## Cloudflare
 
-连接本仓库，Pages 的构建命令留空、输出目录设为 `/`。如采用 Workers & Pages 的 Worker 流程，仓库提供 `wrangler.jsonc`，部署命令为 `npx wrangler deploy`。
+连接本仓库，Pages 的构建命令留空、输出目录设为 `docs`。如采用 Workers & Pages 的 Worker 流程，仓库提供 `wrangler.jsonc`，部署命令为 `npx wrangler deploy`。
 
-本地预览：`python3 -m http.server 8765`。
+本地预览：`python3 -m http.server 8765 --directory docs`。
+
+GitHub Pages：main 分支的 `/docs` 目录。
