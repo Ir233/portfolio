@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": "docs",
+  "headers": [
+    {
+      "source": "/assets/:folder/master.m3u8",
+      "headers": [
+        { "key": "Content-Type", "value": "application/vnd.apple.mpegurl" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/assets/:folder/:segment.ts",
+      "headers": [
+        { "key": "Content-Type", "value": "video/mp2t" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
+  ]
+}

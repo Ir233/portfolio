@@ -17,3 +17,7 @@
 本地预览：`python3 -m http.server 8765 --directory docs`。
 
 GitHub Pages：main 分支的 `/docs` 目录。
+
+## Vercel
+
+导入 Ir233/portfolio，保留仓库根目录，框架选择 Other。根目录的 vercel.json 已指定静态输出目录 docs，并配置两个 PV 的 HLS 播放类型，无需构建或安装依赖。
