@@ -1,0 +1,1 @@
+(()=>{const v=document.querySelector('#film');if(!v)return;document.querySelectorAll('[data-video-time]').forEach(b=>b.addEventListener('click',()=>{v.currentTime=Number(b.dataset.videoTime);v.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});v.play().catch(()=>{});}));})();
