@@ -22,3 +22,23 @@
 .project-portal-shade{position:fixed;inset:0;background:#10110f;z-index:4999;pointer-events:none}
 .portal-original{position:fixed!important;z-index:2;box-sizing:border-box;margin:0!important;transform:none!important;transition:none!important;pointer-events:none;box-shadow:none!important}
 .portal-original img{transform:none!important;filter:none!important}
+/* Immediate opening, network feedback, and continuous content reveal. */
+.project-portal{contain:layout paint;transform:translateZ(0)}
+.project-portal-frame{z-index:3;opacity:1!important;backface-visibility:hidden}
+.portal-original{z-index:2;opacity:1!important}
+.portal-loading{position:absolute;z-index:4;bottom:max(28px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;background:#202719;border:1px solid #899573;color:#efeee5;font-size:14px;line-height:1.6;white-space:nowrap;box-shadow:0 5px 24px #0006}
+.portal-loading:before{content:"";width:10px;height:10px;flex:none;background:#d9e6a7;animation:portal-wait 1s steps(2,end) infinite}
+.portal-loading a{color:#d9e6a7;min-height:32px;display:inline-flex;align-items:center}.portal-loading a[hidden]{display:none}
+@keyframes portal-wait{to{transform:rotate(90deg)}}
+@media(max-width:600px){.portal-loading{font-size:12px;padding:12px;gap:10px;max-width:calc(100vw - 24px);white-space:normal;width:max-content}}
+@media(prefers-reduced-motion:reduce){.portal-loading:before{animation:none}}
+/* Rounded UI, anchored menu window, and tactile controls. */
+.stage{border-radius:22px}.gallery img,.preview-strip img{border-radius:14px}.gallery button{border-radius:14px;overflow:hidden}.play-cover button,.fullscreen,.error,.error button,.lightbox,.lightbox button,.jump,.toc a,.next-project{border-radius:12px}.achievement-panel{border-radius:20px}.monogram{border-radius:9px}.project-card{border-radius:22px}.site-sidebar nav a{border-radius:12px}.nav-toggle{border-radius:18px;transition:transform .22s cubic-bezier(.2,.8,.2,1),background .2s}.nav-toggle:active{transform:scale(.94)}button:active{filter:brightness(.92)}.nav-close{border-radius:11px}.portal-loading{border-radius:16px}
+@media(max-width:900px){
+ .site-sidebar{top:auto;left:12px;bottom:calc(max(20px,env(safe-area-inset-bottom)) + 60px);width:min(340px,calc(100vw - 24px));max-height:calc(100dvh - 110px);padding:22px 18px;border:1px solid #73805b;border-radius:24px;background:#1b2018f5;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 24px 80px #0009;transform:translateY(16px) scale(.92);transform-origin:24px bottom;transition:transform .38s cubic-bezier(.22,.8,.18,1),visibility .38s;}
+ .nav-open .site-sidebar{transform:translateY(0) scale(1);visibility:visible}
+ .nav-open .nav-scrim{background:#0005;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+ .sidebar-top{margin-bottom:14px;font-size:20px}.sidebar-note{margin:18px 10px 0}.site-sidebar nav{gap:5px}.site-sidebar nav a{padding:10px;min-height:44px}
+ .nav-open .nav-toggle{z-index:1011;background:#354128;border-color:#d9e6a7}
+}
+@media(prefers-reduced-motion:reduce){.site-sidebar,.nav-toggle{transition:none!important}}
