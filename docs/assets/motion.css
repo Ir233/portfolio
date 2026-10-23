@@ -1,0 +1,24 @@
+/* Local interaction prototype only. */
+.project-card{position:relative;border-radius:18px;isolation:isolate;transform:translateZ(0);transition:transform .42s cubic-bezier(.2,.75,.2,1),box-shadow .42s,border-color .35s;will-change:transform}
+.project-card img{transition:transform .7s cubic-bezier(.2,.75,.2,1),filter .5s;transform-origin:center}
+.project-card .card-copy{position:relative;z-index:1;background:#151710;transition:background .4s}
+.project-card .card-action{transition:transform .35s,color .35s}
+@media(hover:hover) and (pointer:fine){.project-card:hover{transform:translateY(-7px) scale(1.012);box-shadow:0 24px 65px #0008;border-color:#a7b97c}.project-card:hover img{transform:scale(1.035);filter:brightness(1.06)}.project-card:hover .card-action{transform:translateX(7px)}.project-card:hover .card-copy{background:#1c2015}}
+.project-card:active{transform:scale(.985);transition-duration:.12s}
+.launch-shell{position:fixed;z-index:5000;overflow:hidden;background:#151710;box-shadow:0 20px 90px #0009;pointer-events:none;color:#efeee5;border:1px solid #45483c;transform-origin:top left}
+.launch-shell .launch-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.launch-shell:after{content:"";position:absolute;inset:0;background:linear-gradient(#10110f11 25%,#10110fdd)}
+.launch-caption{position:absolute;left:clamp(24px,6vw,90px);bottom:12vh;z-index:2;max-width:85%;font-size:clamp(30px,5vw,70px);line-height:1.3;opacity:0;transform:translateY(20px)}
+.launch-caption small{display:block;color:#d9e6a7;font-size:14px;letter-spacing:.15em;margin-bottom:20px}
+.launch-backdrop{position:fixed;inset:0;background:#070906;z-index:4999;pointer-events:none}
+.arrival-veil{position:fixed;inset:0;background:#10110f;z-index:6000;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.project-card,.project-card img,.project-card .card-action{transition:none!important}.project-card:hover,.project-card:hover img{transform:none}}
+/* Revised opening: fixed cover, expanding reveal window, live destination. */
+.project-card img{transition:filter .5s;transform:none!important}
+@media(hover:hover) and (pointer:fine){.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 45px #0006}.project-card:hover img{transform:none;filter:brightness(1.03)}}
+.project-card:active{transform:none}
+.project-portal{position:fixed;inset:0;z-index:5000;background:#10110f;overflow:hidden;will-change:clip-path;isolation:isolate}
+.project-portal-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#10110f}
+.project-portal-shade{position:fixed;inset:0;background:#10110f;z-index:4999;pointer-events:none}
+.portal-original{position:fixed!important;z-index:2;box-sizing:border-box;margin:0!important;transform:none!important;transition:none!important;pointer-events:none;box-shadow:none!important}
+.portal-original img{transform:none!important;filter:none!important}
