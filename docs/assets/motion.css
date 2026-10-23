@@ -42,3 +42,7 @@
  .nav-open .nav-toggle{z-index:1011;background:#354128;border-color:#d9e6a7}
 }
 @media(prefers-reduced-motion:reduce){.site-sidebar,.nav-toggle{transition:none!important}}
+/* The selected card itself opens; keep its artwork at its original dimensions. */
+.project-portal.card-window{inset:auto;contain:layout paint;will-change:width,height,left,top;border:1px solid #45483c;background:#151710;box-shadow:0 24px 90px #0008;transform:none}
+.window-original{position:absolute!important;left:0;top:0;margin:0!important;flex:none;transform:none!important;transition:none!important;pointer-events:none;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden}
+.window-original img{transform:none!important;transition:none!important;filter:none!important}
